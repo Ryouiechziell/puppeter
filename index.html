@@ -1,39 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>Using puppeter for automation</title>
+  <meta charset="UTF-8" />
+  <title>Test Page for Puppeteer</title>
 </head>
-<body>
-  <style>
-    *{
-      margin: 0px;
-      padding: 0px;
-    }
-    .body{
-      background: white
-    }
-    .button-box{
-      display: flex;
-      align-items: center;
-      max-width: 100%;
-      height: auto;
-      margin: 0px auto;
-      border: 1px solid black;
-    }
-    #button{
-      height: 30px;
-      width: 70px;
-      background-color: yellow;
-      color: white;
-    }
-  </style>
-  <div class="button-box">
-    <button id="button 1">
-      button 1
+<body style="font-family: Arial, sans-serif; margin: 40px; background: #f9f9f9;">
+
+  <h1 style="color: #333;">Puppeteer Feature Test</h1>
+
+  <hr style="margin: 20px 0;">
+
+  <!-- Input Form -->
+  <form id="test-form" style="margin-bottom: 30px;">
+    <label style="display:block; margin-bottom:8px;">Name:</label>
+    <input type="text" name="name" placeholder="Your name" style="padding: 8px; width: 300px; margin-bottom: 10px;"><br>
+
+    <label style="display:block; margin-bottom:8px;">Email:</label>
+    <input type="email" name="email" placeholder="your@example.com" style="padding: 8px; width: 300px; margin-bottom: 10px;"><br>
+
+    <label style="display:block; margin-bottom:8px;">Gender:</label>
+    <input type="radio" name="gender" value="male"> Male
+    <input type="radio" name="gender" value="female"> Female<br><br>
+
+    <label style="display:block; margin-bottom:8px;">Favorite Color:</label>
+    <select name="color" style="padding: 8px; width: 150px; margin-bottom: 10px;">
+      <option value="red">Red</option>
+      <option value="blue">Blue</option>
+      <option value="green">Green</option>
+    </select><br>
+
+    <label style="display:block; margin-bottom:8px;">Agree to Terms:</label>
+    <input type="checkbox" name="agree"> I agree<br><br>
+
+    <label style="display:block; margin-bottom:8px;">Upload File:</label>
+    <input type="file" id="file-input" style="margin-bottom: 10px;"><br>
+
+    <button type="submit" style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 4px;">
+      Submit
     </button>
-    <button id="button 2">
-      button 2
+  </form>
+
+  <!-- Dynamic Content -->
+  <div style="margin-bottom: 30px;">
+    <button onclick="document.getElementById('dynamic').innerText = 'Content Loaded!';" 
+      style="padding: 8px 16px; background: #2196F3; color: #fff; border: none; border-radius: 4px;">
+      Load Dynamic Text
     </button>
-    <button id="button 3">
-      button 3
+    <p id="dynamic" style="margin-top: 10px; font-weight: bold;"></p>
+  </div>
+
+  <!-- Alert & Confirm -->
+  <div style="margin-bottom: 30px;">
+    <button onclick="alert('This is an alert!')" 
+      style="padding: 8px 16px; background: orange; color: #fff; border: none; border-radius: 4px;">
+      Show Alert
+    </button>
+    <button onclick="confirm('Are you sure?')" 
+      style="padding: 8px 16px; background: #9C27B0; color: #fff; border: none; border-radius: 4px; margin-left: 10px;">
+      Show Confirm
     </button>
   </div>
+
+  <!-- Scroll Test -->
+  <div style="height: 600px; background: #eee; margin-bottom: 30px; padding: 10px;">
+    <p>Scroll to the bottom to reveal the button.</p>
+    <div style="height: 500px;"></div>
+    <button id="scrollBtn" style="padding: 10px; background: #E91E63; color: white; border: none; border-radius: 4px;">
+      You reached the bottom!
+    </button>
+  </div>
+
+  <!-- Navigation -->
+  <a href="https://example.com" target="_blank" 
+    style="display: inline-block; padding: 10px 15px; background: #607D8B; color: #fff; text-decoration: none; border-radius: 4px;">
+    Go to Example.com
+  </a>
+
+  <!-- Download Test -->
+  <div style="margin-top: 30px;">
+    <a href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" download 
+      style="display: inline-block; margin-top: 10px; padding: 10px 15px; background: #3F51B5; color: white; text-decoration: none; border-radius: 4px;">
+      Download PDF
+    </a>
+  </div>
+
 </body>
+                                                                   </html>
